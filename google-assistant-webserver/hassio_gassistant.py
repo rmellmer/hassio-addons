@@ -48,7 +48,7 @@ class Command(Resource):
         message = request.args.get('message', default = 'This is a test!')
         response_text, response_html = assistant.assist(text_query=message)
         logging.debug(response_text)
-        return {'status': 'OK'}
+        return {'response_text': response_text}
 
 api.add_resource(Command, '/command')
 
